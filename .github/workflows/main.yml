@@ -13,4 +13,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Display date and time
-      - run: echo "$(date '+%Y-%m-%d %H:%M:%S')"
+      - run: date

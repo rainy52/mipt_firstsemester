@@ -1,0 +1,16 @@
+name: Show the packages of the project
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  show-packages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Activate mvn package command
+        run: mvn package

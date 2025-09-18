@@ -1,10 +1,8 @@
 on:
   push:
-    branches:
-      - '*'
+    branches: ["feature/hw2-Maven"]
   pull_request:
-    branches:
-      - '*'
+    branches: ["feature/hw2-Maven"]
 
 jobs:
   package:
@@ -12,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Java
+      - name: Setup
         uses: actions/setup-java@v3
         with:
           java-version: '21'

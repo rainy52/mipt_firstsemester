@@ -9,6 +9,16 @@ public class TestCustomArrayList {
         arr.add("Test");
         assertEquals("Test", arr.get(0));
     }
+    @Test
+    void emptySize() {
+        CustomArrayList<Integer> arr = new CustomArrayList<>();
+        assertTrue(arr.isEmpty());
+        assertEquals(0, arr.size());
+
+        arr.add(1);
+        assertFalse(arr.isEmpty());
+        assertEquals(1, arr.size());
+    }
 
     @Test
     void remove() {
@@ -22,5 +32,9 @@ public class TestCustomArrayList {
             assertEquals(i, arr.get(i-1));
         }
     }
-
+    @Test
+    void throwsNull() {
+        CustomArrayList<Integer> arr = new CustomArrayList<>();
+        assertThrows(NullPointerException.class, () -> arr.add(null));
+    }
 }
